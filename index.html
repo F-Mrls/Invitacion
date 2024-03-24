@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación al Evento</title>
+    <style>
+        /* Estilo base */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo de las secciones parallax */
+        .parallax-section {
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .first {
+            background-image: url('imagen1.jpg');
+        }
+
+        .second {
+            background-image: url('imagen2.jpg');
+        }
+
+        .third {
+            background-image: url('imagen3.jpg');
+        }
+
+        .fourth {
+            background-image: url('imagen4.jpg');
+        }
+
+        .fifth {
+            background-image: url('imagen5.jpg');
+        }
+
+        .sixth {
+            background-image: url('imagen6.jpg');
+        }
+
+        /* Estilo de las imágenes estáticas */
+        .static-image {
+            height: 500px; /* ajusta según el tamaño de tus imágenes */
+            background-size: cover;
+            background-position: center;
+            margin: 50px 0; /* ajusta según sea necesario */
+        }
+
+        .static-image:nth-child(odd) {
+            background-image: url('imagen_estatica1.jpg');
+        }
+
+        .static-image:nth-child(even) {
+            background-image: url('imagen_estatica2.jpg');
+        }
+
+        /* Estilo de las secciones de texto */
+        .text-section {
+            padding: 50px;
+            background-color: #f0f0f0; /* ajusta el color de fondo según tus preferencias */
+        }
+
+        /* Estilo de animación para el texto */
+        .text-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .text-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax-section first">
+        <!-- Contenido de la primera sección -->
+    </div>
+
+    <div class="static-image">
+        <!-- Primera imagen estática -->
+    </div>
+
+    <div class="parallax-section second">
+        <!-- Contenido de la segunda sección -->
+    </div>
+
+    <div class="text-section">
+        <!-- Texto de la primera sección de texto -->
+    </div>
+
+    <div class="parallax-section third">
+        <!-- Contenido de la tercera sección -->
+    </div>
+
+    <div class="static-image">
+        <!-- Segunda imagen estática -->
+    </div>
+
+    <div class="parallax-section fourth">
+        <!-- Contenido de la cuarta sección -->
+    </div>
+
+    <div class="text-section">
+        <!-- Texto de la segunda sección de texto -->
+    </div>
+
+    <div class="parallax-section fifth">
+        <!-- Contenido de la quinta sección -->
+    </div>
+
+    <div class="static-image">
+        <!-- Tercera imagen estática -->
+    </div>
+
+    <div class="parallax-section sixth">
+        <!-- Contenido de la sexta sección -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sections = document.querySelectorAll('.text-section');
+
+            function checkPosition() {
+                for (var i = 0; i < sections.length; i++) {
+                    var section = sections[i];
+                    var positionFromTop = section.getBoundingClientRect().top;
+
+                    if (positionFromTop - window.innerHeight <= 0) {
+                        section.classList.add('active');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', checkPosition);
+            window.addEventListener('resize', checkPosition);
+
+            checkPosition();
+        });
+    </script>
+</body>
+</html>
