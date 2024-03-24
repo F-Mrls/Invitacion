@@ -19,46 +19,28 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            position: relative; /* Para permitir el texto superpuesto */
         }
 
-        .first {
-            background-image: url('imagen1.jpg');
-        }
-
-        .second {
-            background-image: url('imagen2.jpg');
-        }
-
-        .third {
-            background-image: url('imagen3.jpg');
-        }
-
-        .fourth {
-            background-image: url('imagen4.jpg');
-        }
-
-        .fifth {
-            background-image: url('imagen5.jpg');
-        }
-
-        .sixth {
-            background-image: url('imagen6.jpg');
-        }
-
-        /* Estilo de las imágenes estáticas */
+        /* Estilo de las secciones de fotos estáticas */
         .static-image {
             height: 500px; /* ajusta según el tamaño de tus imágenes */
             background-size: cover;
             background-position: center;
             margin: 50px 0; /* ajusta según sea necesario */
+            position: relative; /* Para permitir el texto superpuesto */
         }
 
-        .static-image:nth-child(odd) {
-            background-image: url('imagen_estatica1.jpg');
-        }
-
-        .static-image:nth-child(even) {
-            background-image: url('imagen_estatica2.jpg');
+        /* Estilo del texto superpuesto */
+        .static-image .overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            width: 100%;
         }
 
         /* Estilo de las secciones de texto */
@@ -81,15 +63,15 @@
     </style>
 </head>
 <body>
-    <div class="parallax-section first">
+    <div class="parallax-section" style="background-image: url('https://images.pexels.com/photos/2078008/pexels-photo-2078008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
         <!-- Contenido de la primera sección -->
     </div>
 
-    <div class="static-image">
-        <!-- Primera imagen estática -->
+    <div class="static-image" style="background-image: url('static1.jpg');">
+        <div class="overlay-text">Texto superpuesto para la primera imagen estática</div>
     </div>
 
-    <div class="parallax-section second">
+    <div class="parallax-section" style="background-image: url('https://images.pexels.com/photos/342520/pexels-photo-342520.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
         <!-- Contenido de la segunda sección -->
     </div>
 
@@ -97,15 +79,15 @@
         <!-- Texto de la primera sección de texto -->
     </div>
 
-    <div class="parallax-section third">
+    <div class="parallax-section" style="background-image: url('https://images.pexels.com/photos/2078008/pexels-photo-2078008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
         <!-- Contenido de la tercera sección -->
     </div>
 
-    <div class="static-image">
-        <!-- Segunda imagen estática -->
+    <div class="static-image" style="background-image: url('https://images.pexels.com/photos/1304475/pexels-photo-1304475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+        <div class="overlay-text">Texto superpuesto para la segunda imagen estática</div>
     </div>
 
-    <div class="parallax-section fourth">
+    <div class="parallax-section" style="background-image: url('parallax4.jpg');">
         <!-- Contenido de la cuarta sección -->
     </div>
 
@@ -113,15 +95,15 @@
         <!-- Texto de la segunda sección de texto -->
     </div>
 
-    <div class="parallax-section fifth">
+    <div class="parallax-section" style="background-image: url('parallax5.jpg');">
         <!-- Contenido de la quinta sección -->
     </div>
 
-    <div class="static-image">
-        <!-- Tercera imagen estática -->
+    <div class="static-image" style="background-image: url('static3.jpg');">
+        <div class="overlay-text">Texto superpuesto para la tercera imagen estática</div>
     </div>
 
-    <div class="parallax-section sixth">
+    <div class="parallax-section" style="background-image: url('parallax6.jpg');">
         <!-- Contenido de la sexta sección -->
     </div>
 
