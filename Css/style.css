@@ -3,6 +3,7 @@
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Para ocultar la barra de desplazamiento horizontal */
     overflow-y: hidden; /* Inicialmente deshabilita el scroll vertical */
+    text-align: center;
   }
 
  
@@ -34,7 +35,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('img/fondo.png'); /* Cambiar la ruta por la imagen deseada */
+    background-image: url('../img/fondo.png'); /* Cambiar la ruta por la imagen deseada */
     filter: blur(5px); /* Efecto de desenfoque */
     z-index: -1; /* Envía la imagen de preloader detrás de todo */
   }
@@ -99,10 +100,10 @@ background-position: center;
   }
 
   .parallax1 {
-    background-image: url('img/fondo2.png'); /* Cambiar la ruta por la imagen deseada */
+    background-image: url('../img/fondo2.png'); /* Cambiar la ruta por la imagen deseada */
   }
   .parallax2 {
-     background-image: url('img/fondo2.png'); /* Cambiar la ruta por la imagen deseada */
+     background-image: url('../img/fondo2.png'); /* Cambiar la ruta por la imagen deseada */
     height: 60vh;
   }
 
@@ -114,7 +115,12 @@ background-position: center;
     background-color: #f2f2f2;
     filter: drop-shadow(2px 4px 6px black);
   }
+.custom{
+  font-family: 'cymbeline';
+  font-size: 20pt;
+  color: rgb(8, 58, 8);
 
+}
   .section {
     padding: 20px;
   }
@@ -122,15 +128,7 @@ background-position: center;
 .blur{
   filter: blur(2px);
 }
-.atras{
-  
-  z-index: -1;
-}
-.encima{
-  position: absolute;
-  z-index: 10000;
-  filter: blur(0px);
-}
+
 
 .nombre-img {
     opacity: 0; /* Inicialmente oculta la imagen */
@@ -179,8 +177,6 @@ background-position: center;
     }
 }
 
-
-
 /* Estilo para la barra de scroll */
   ::-webkit-scrollbar {
 	z-index:10000;
@@ -195,19 +191,31 @@ background-position: center;
     border-radius: 5px; /* Borde redondeado */
   }
 
+
+  @font-face {     font-family: 'Cymbeline';     src: url(../Font/Cymbeline\ Regular.ttf) format(truetype);
+  }
+
   @media only screen and (max-width: 900px) {
     .progress-bar-container { width: 90%;}
-    .parallax, .parallax1, .parallax2{
-      width: 90%;
-    }
     .section{ 
-      width: 60%;
+      width: 70%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
     }
+
+    .custom{
+      font-size: 23pt;
+      
+    }
+
+    .parallax2 .chica{
+      width: 90%;
+    }
+  
     .media-section img{ 
-       width: 590px; }
+       width: 750px; }
 } 
+
 

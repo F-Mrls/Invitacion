@@ -25,36 +25,30 @@ setTimeout(function() {
     document.querySelector('.nombre-img').classList.add('visible'); // Agrega la clase "visible" a la imagen
 }, 3500); // 3 segundos de espera
 
-// Función para manejar el evento de scroll
+// Función para manejar el evento de scroll y activar la animación
 function handleScrollAnimation() {
-    var elements = document.querySelectorAll('.animate-on-scroll');
+  var elements = document.querySelectorAll('.animate-on-scroll');
 
-    // Iterar sobre cada elemento animable
-    elements.forEach(function(element) {
-        var positionFromTop = element.getBoundingClientRect().top;
-        var windowHeight = window.innerHeight;
+  // Iterar sobre cada elemento animable
+  elements.forEach(function(element) {
+      var positionFromTop = element.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
 
-        // Verificar si el elemento está cerca de la posición actual
-        if (positionFromTop - windowHeight <= 0) {
-            // Retrasar la adición de la clase 'visible' después del scroll
-            setTimeout(function() {
-                element.classList.add('visible');
-            }, 200); // 0.5 segundos de retraso
-            // Eliminar el evento de scroll para evitar que la animación se active múltiples veces
-            window.removeEventListener('scroll', handleScrollAnimation);
-        }
-    });
+      // Verificar si el elemento está cerca de la posición actual
+      if (positionFromTop - windowHeight <= 0) {
+          // Agregar la clase 'visible' al elemento para activar la animación
+          element.classList.add('visible');
+      }
+  });
 }
+
+// Llamar a la función una vez que el DOM se haya cargado completamente
+document.addEventListener('DOMContentLoaded', function() {
+  handleScrollAnimation(); // Llama a la función para activar la animación al cargar la página
+});
 
 // Agregar el evento de scroll para llamar a la función handleScrollAnimation
 window.addEventListener('scroll', handleScrollAnimation);
 
-// Llamar a la función una vez al cargar la página para manejar los elementos que ya están en la vista
-handleScrollAnimation();
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Llamar a la función una vez que el DOM se haya cargado completamente
-    handleScrollAnimation();
-});
 
 
